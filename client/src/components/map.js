@@ -15,7 +15,6 @@ function App(){
         findPlace(textSearch).then(res => {setData(res.data)});
         setIsFind(true);
     };
-    console.log(data);
     return(
         <div className="form">
         <input type="text" 
@@ -25,7 +24,13 @@ function App(){
         <button onClick={handleClick}>
           <span>search</span>
         </button>
-        {isFind && (<div>formatted_address: {data.formatted_address}</div>)}
+        {isFind && (
+            <div>
+            <p>name: {data.name}</p>
+            <p>formatted_address: {data.formatted_address}</p>
+            <p>Geometry: {JSON.stringify(data.geometry)}</p>
+            </div>
+            )}
       </div>
     );
 }

@@ -18,5 +18,5 @@ import mapRouter from "./routes/map.routes.js";
 app.use("/api/place", mapRouter);
 
 app.listen(PORT, function(){
-  console.log("Oke");
+  console.log(`Server is running on port ${PORT}.`);
 });
